@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <h1>Book review: </h1>
+
+
+  {% for r in reviews %}
+      <ul>
+        <li>r.review</li>
+      </ul>
+  {% endfor %}
+  <form class="" action="{{ url_for('search') }}" method="post">
+    <label for="customRange2">Rate from one to five.</label>
+    <input type="range" class="custom-range" min="0" max="5" id="customRange2">
+
+  <div class="form-group">
+   <label for="exampleFormControlTextarea1">Description</label>
+   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+ </div>
+     <button type="submit" class="btn btn-primary mb-2">Submit</button>
+ </form>
+
+
+  <form class="" action="{{ url_for('search') }}" method="get">
+
+
+    <div class="link">
+        <button type="submit" class="btn btn-primary mb-2">Back</button>
+    </div>
+
+  </form>
+{% endblock %}

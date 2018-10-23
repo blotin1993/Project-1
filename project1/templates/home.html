@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <h1>Welcome!</h1>
+    Hello, {{ user_id }}!
+    <h2>>Search Books<</h2>
+    <form action="{{ url_for('search')}}", method='post'>
+      <div class="form-row align-items-center">
+        <div class="col-auto">
+          <label class="sr-only" for="inlineFormInput">ISBN</label>
+          <input type="text" name="isbn" class="form-control mb-2" id="inlineFormInput" placeholder="ISBN">
+        </div>
+        <div class="col-auto">
+          <label class="sr-only" for="inlineFormInput">Title</label>
+          <input type="text" name="title" class="form-control mb-2" id="inlineFormInput" placeholder="Title">
+        </div>
+        <div class="col-auto">
+          <label class="sr-only" for="inlineFormInput">Author</label>
+          <input type="text" name="author" class="form-control mb-2" id="inlineFormInput" placeholder="Author">
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-2">Search</button>
+        </div>
+      </div>
+    </form>
+
+
+
+    <form class="logout" action="{{ url_for('logout') }}" method="post">
+  <div class="link">
+    <button type="submit" class="btn btn-secondary mb-2">Logout</button>
+  </div>
+    </form>
+
+{% endblock %}

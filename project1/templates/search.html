@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+    {% for book in books %}
+      <a href="{{ url_for('review', review_isbn=book.isbn) }}" target="_blank">
+        <b>ISBN</b>: {{ book.isbn }}, <b>Title</b>: {{ book.title }}, <b>Author</b>: {{ book.author }}, <b>Publication year</b>: {{ book.year }}. <br>
+      </a>
+    {% endfor %}
+
+
+      <div class="link">
+          <a class="btn btn-outline-primary" href="/search" role="button">Back</a>
+      </div>
+
+
+{% endblock %}

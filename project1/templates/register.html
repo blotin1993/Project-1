@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <div>
+    <h1>Register</h1><hr>
+  </div>
+  <div class="container">
+    <form action="{{ url_for('form_completed') }}" method="post">
+    <fieldset>
+      <legend>Register form</legend>
+      <label for="username">Username</label>
+      <input type="text" name="username" placeholder="Username"><br>
+      <label for="password">Password</label>
+      <input type="password" name="password" placeholder="Password"><br>
+      <label for="mail">Email</label>
+      <input type="text" name="email" placeholder="Email"><br>
+      <button type="submit" class="btn btn-outline-dark">Register</button>
+    </fieldset>
+    </form>
+  </div>
+
+<hr>
+    <div class="link">
+        <a class="btn btn-outline-primary" href="/" role="button">Home</a>
+    </div>
+{% endblock %}

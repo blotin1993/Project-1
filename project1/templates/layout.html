@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Book's UI</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+        <style>
+            body {
+              margin: 20px;
+            }
+            h1 {
+              text-align: center;
+              margin: 20px;
+              color: #4286f4;
+            }
+            .container {
+              padding: 50px;
+              border-radius: 10px;
+            }
+            hr {
+              border: 5px;
+              height: 1px;
+              background: #333;
+              background-image: linear-gradient(to right, #ccc, #333, #ccc);
+            }
+            div.link {
+              text-align: center;
+            }
+            footer {
+              text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+            {% block body %}
+            {% endblock %}
+    </body>
+    <footer>
+      Copyright (c) 2018 Gonzalo Blotta All Rights Reserved.
+    </footer>
+</html>

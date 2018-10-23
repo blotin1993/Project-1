@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <h1>Casos</h1>
+  <div>
+    <ul>
+        {% for caso in casos %}
+            <li>
+                    {{ caso.ot }} - {{ caso.base }} - {{ caso.caso }}
+            </li>
+        {% endfor %}
+    </ul>
+  </div>
+  <a href="../casos">Volver</a>
+{% endblock %}
