@@ -1,4 +1,5 @@
 CREATE TABLE books (
+    book_id serial PRIMARY KEY
     isbn VARCHAR NOT NULL,
     title VARCHAR NOT NULL,
     author VARCHAR NOT NULL,
@@ -10,11 +11,16 @@ CREATE TABLE users (
   password VARCHAR NOT NULL,
   mail VARCHAR NOT NULL
 );
+
 CREATE TABLE reviews (
-  user_id INTEGER REFERENCES users, FOREIGN KEY
-  review TEXT
+  review_id serial,
+  r_user_id INTEGER REFERENCES users(id),
+  r_book_id INTEGER REFERENCES books(book_id),
+  review VARCHAR NOT NULL,
+  PRIMARY KEY (review_id, r_user_id, r_book_id)
 );
 
+***column TYPE REFERENCES TABLE_NAME(COLUMN NAME),
 
 
 CREATE TABLE gsa (

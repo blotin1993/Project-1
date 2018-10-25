@@ -3,7 +3,7 @@
 {% block body %}
 
     {% for book in books %}
-      <a href="{{ url_for('review', review_isbn=book.isbn) }}" target="_blank">
+      <a href="{{ url_for('review', book_id=book.book_id) }}" target="_blank">
         <b>ISBN</b>: {{ book.isbn }}, <b>Title</b>: {{ book.title }}, <b>Author</b>: {{ book.author }}, <b>Publication year</b>: {{ book.year }}. <br>
       </a>
     {% endfor %}

@@ -1,32 +1,25 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <h1>Book review: </h1>
-
-
-  {% for r in reviews %}
-      <ul>
-        <li>r.review</li>
-      </ul>
-  {% endfor %}
-  <form class="" action="{{ url_for('search') }}" method="post">
-    <label for="customRange2">Rate from one to five.</label>
+  <h1>{{ book }}</h1>
+  <form action="{{ url_for('review') }}" method="post">
+    <h2><label for="customRange2">Rate from one to five.</label></h2><br>
     <input type="range" class="custom-range" min="0" max="5" id="customRange2">
-
   <div class="form-group">
-   <label for="exampleFormControlTextarea1">Description</label>
-   <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+   <h3><label for="exampleFormControlTextarea1">Description</label></h3>
+   <textarea name="review" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Insert Review"></textarea>
  </div>
      <button type="submit" class="btn btn-primary mb-2">Submit</button>
  </form>
-
-
-  <form class="" action="{{ url_for('search') }}" method="get">
-
-
+ <form class="" action="{{ url_for('search') }}" method="get">
     <div class="link">
-        <button type="submit" class="btn btn-primary mb-2">Back</button>
+      <button type="submit" class="btn btn-primary mb-2">Back</button>
     </div>
-
   </form>
+  <h3><u>Reviews</u></h3>
+  {% for review in reviews %}
+    <ul>
+      <li>{{ review.review }}</li>
+    </ul>
+  {% endfor %}
 {% endblock %}
