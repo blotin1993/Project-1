@@ -159,31 +159,3 @@ def api(isbn):
 
 
 
-#@app.route("/casos", methods=["GET","POST"])
-def casos():
-
-    if request.method == "GET":
-        return render_template("gsa.html")
-
-    try:
-        ot = request.form.get("ot")
-        base = request.form.get("base")
-        caso = request.form.get("caso")
-    except ValueError:
-        return render_template("error.html")
-
-    db.execute("INSERT INTO casos (ot, base, caso) VALUES (:ot, :base, :caso)",
-            {"ot": ot, "base": base, "caso": caso})
-    db.commit()
-    return render_template("gsa.html")
-
-@app.route("/casos/listar", methods=["GET","POST"])
-def listar():
-    casos = db.execute("SELECT * FROM casos ORDER BY base DESC").fetchall()
-    return render_template("listar.html", casos=casos)
-
-#for isbns!!!
-#@app.route("/api/<isbn>", methods=["GET"])
-#def api():
-#    res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "HMi6BEjUA6UtwzymbnKw", "isbns": "<isbn>"})
-#    print(res.json())
